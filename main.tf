@@ -1,5 +1,6 @@
 resource "aws_iam_role" "iam_for_lambda" {
   name = "lambda-user"
+   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
 resource "aws_lambda_function" "test_lambda" {
